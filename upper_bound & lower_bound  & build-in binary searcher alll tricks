@@ -35,7 +35,7 @@ int32_t main() {
    
    //int index = lower_bound(v.begin(), v.end(), 5) - v.begin(); 
    /// 5 er immediate ager index tah k access kore 
-   
+    //  cout << index << endl;
    
    /// lower bound er value find kora 
    
@@ -53,9 +53,17 @@ int32_t main() {
    
    
    
- //  cout << index << endl;
+l;
    
    
+   /// serarching  a sorted in n lg n time complexity using Binary Search Buildin 
+      
+   /// if 9 exist basically return true and false
+   
+    
+   bool bns = binary_search(v.begin(),v.end(), 9);
+   if(bns) cout <<"YES\n";
+   else cout <<"NO\n";
    
    
    
