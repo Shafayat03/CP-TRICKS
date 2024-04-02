@@ -1,1 +1,36 @@
 
+/// Generating all prime factors of  a number
+/// n = 24           and ans = 2 ^3  , 3
+
+#include<bits/stdc++.h>
+#define int long long
+#define endl '\n'
+typedef long long ll;
+using namespace std;
+int32_t main()
+{
+    ll n;
+    cin >> n;
+    bool ok = true;
+     vector<ll>prime_factors;
+
+
+    //if(n < 2) ok = false;
+    for(ll i = 2 ; i * i <= n; i++)
+    {
+       while(n %  i == 0) {
+            prime_factors.push_back(i);
+            n /= i;
+        }
+    }
+    if(n > 1){
+        prime_factors.push_back(n);
+    }
+
+
+     for(int prime : prime_factors){
+        cout <<  prime << " ";
+     }
+
+    return 0;
+}
