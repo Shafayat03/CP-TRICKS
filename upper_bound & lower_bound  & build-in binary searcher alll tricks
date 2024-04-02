@@ -68,7 +68,8 @@ l;
    
    
    
-   
+   //lower bound -- > reutrn >= x;
+  // upper bound --> return > x;
    
    
    
