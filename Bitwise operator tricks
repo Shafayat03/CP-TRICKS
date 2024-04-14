@@ -17,3 +17,130 @@ int main() {
 	for(int i = 1; i <= n; i++) cin >> a[i], Xor ^= a[i];
 	cout << Xor << "\n";
 }
+
+
+
+problem - 02
+
+## You are given a number n. Check if it is a power of 2?
+constraints test case <= 10 ^ 7
+n <= 10 ^ 18
+
+code: 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int t;
+	cin >> t;
+	while(t--) {
+		int n;
+		cin >> n;
+		if(n + n - 1 == (n ^ (n - 1))) {
+			cout << "YES\n";
+		}
+		else {
+			cout << "NO\n";
+		}
+	}
+}
+
+
+problem - 03 
+
+## You are given an array of size n. you will have to answer q queries.
+In each query you have to find the subarray sum of a subarray [L, R]
+q <= 2 * 10 ^ 5
+n <= 2 * 10 ^ 5
+
+
+code : 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	int cumsum[n + 1];
+	int a[n + 1];
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	cumsum[0] = 0;
+	for(int i = 1; i <= n; i++) cumsum[i] = cumsum[i - 1] + a[i];
+	int q;
+	cin >> q;
+	while(q--) {
+		int L, R;
+		cin >> L >> R;
+		cout << cumsum[R] - cumsum[L - 1] << "\n";
+	}
+}
+
+
+problem - 04 
+
+
+## You are given an array of size n. you will have to answer q queries.
+In each query you have to find the subarray XORSUM of a subarray [L, R]
+
+code: 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	int a[n + 1];
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	int Xor[n + 1]; Xor[0] = 0;
+	for(int i = 1; i <= n; i++) Xor[i] = (Xor[i - 1] ^ a[i]);
+	int q;
+	cin >> q;
+	while(q--) {
+		int L, R;
+		cin >> L >> R;
+		cout << (Xor[R] ^ Xor[L - 1]) << "\n";
+	}
+}
+
+
+
+
+problem - 05 
+## Showing the binary representation of a number :
+
+
+code : 
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	for(int i = 30; i >= 0; i--) {
+		if((n & (1 << i)) > 0) cout << "1";
+		else cout << "0";
+	}
+	cout << "\n";
+}
+
+
+
+
+
+
+/// using bitset ///
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+bitset<100> bs(13); cout << bs << "\n"; /// how to show a bitset
+//for(int i = 0; i < 32; i++) bs[i] = 1 - bs[i];
+//cout << bs << "\n";
+cout << (bs << 3) << "\n";
+/// bitset er sundor application paba dynamic programming e
+cout << bs.count() << "\n";
+}
+
+
+
+
