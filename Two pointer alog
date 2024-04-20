@@ -1,3 +1,5 @@
+L - 02: Find the pair whose sum is equal to x | Two Pointer Series (Bangla) | C++
+
 #include<bits/stdc++.h>
 using  namespace  std;
 int val1,val2;
